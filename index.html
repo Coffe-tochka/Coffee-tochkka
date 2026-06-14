@@ -7,23 +7,82 @@
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <!-- Подключаем ваш надежный файл стилей -->
+    <!-- Подключаем основной файл стилей -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Стили для отображения меню на главной и его увеличения -->
     <style>
-        /* Дополнительный стиль для принудительного открытия крупного меню на ПК */
-        .large-menu-view {
-            display: inline-block;
-            background-color: #6f4e37;
-            color: white;
-            padding: 14px 45px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: background-color 0.2s;
+        .main-menu-container {
+            text-align: center;
+            padding: 40px 0;
+            background-color: #ffffff;
+            border-top: 1px solid #eee0d5;
+            border-bottom: 1px solid #eee0d5;
+            margin-bottom: 40px;
         }
-        .large-menu-view:hover {
-            background-color: #4a3525;
+        /* Стиль кликабельной картинки меню на главной странице */
+        .clickable-menu-img {
+            width: 100%;
+            max-width: 550px; /* Оптимальный размер, чтобы не загромождать экран */
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid #eee0d5;
+            box-shadow: 0 4px 20px rgba(111, 78, 55, 0.05);
+            cursor: zoom-in; /* Иконка лупы при наведении */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .clickable-menu-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(111, 78, 55, 0.1);
+        }
+        .menu-hint {
+            font-size: 0.95rem;
+            color: #776655;
+            margin-top: 15px;
+            font-style: italic;
+        }
+        /* Полноэкранное темное окно при увеличении */
+        .zoom-overlay {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            overflow-y: auto;
+            cursor: zoom-out;
+            padding: 40px 10px;
+        }
+        .zoom-overlay img {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 900px; /* Крупный размер для чтения на ПК */
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.7);
+        }
+        .zoom-close {
+            position: fixed;
+            top: 20px;
+            right: 25px;
+            color: #ffffff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 2001;
+            background: rgba(111, 78, 55, 0.9);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        body.modal-open {
+            overflow: hidden;
         }
     </style>
 </head>
@@ -77,42 +136,48 @@
     <section class="container">
         <h2 class="section-title">Популярные позиции</h2>
         <div class="menu-grid">
-            
             <div class="menu-item">
                 <img src="cappuccino.jpeg" alt="Капучино">
                 <h3>Капучино</h3>
                 <p>Классический кофе с нежной молочной пенкой.</p>
                 <div class="price">350 мл / 270 ₽</div>
             </div>
-
             <div class="menu-item">
                 <img src="latte.jpeg" alt="Латте">
                 <h3>Латте</h3>
                 <p>Мягкий кофейно-молочный напиток.</p>
                 <div class="price">350 мл / 270 ₽</div>
             </div>
-
             <div class="menu-item">
                 <img src="raf.jpeg" alt="РАФ">
                 <h3>РАФ</h3>
                 <p>Густой, нежный сливочный вкус с ванилью.</p>
                 <div class="price">350 мл / 310 ₽</div>
             </div>
-
             <div class="menu-item">
                 <img src="flat.jpeg" alt="Флэт-уайт">
                 <h3>Флэт-уайт</h3>
                 <p>Яркий вкус двойного эспрессо в молоке.</p>
                 <div class="price">250 мл / 250 ₽</div>
             </div>
-
-        </div>
-
-        <div class="menu-link-box">
-            <!-- Ссылка оптимизирована для принудительного зума изображения в браузере -->
-            <a href="menu.jpg" target="_blank" class="large-menu-view">Смотреть всё меню</a>
         </div>
     </section>
+
+    <!-- ИНТЕРАКТИВНОЕ ПОЛНОЕ МЕНЮ ПРЯМО НА СТРАНИЦЕ -->
+    <section class="main-menu-container">
+        <div class="container">
+            <h2 class="section-title">Полное меню кофейни</h2>
+            <!-- Картинка меню встраивается прямо в лендинг -->
+            <img src="menu.jpg" alt="Полное меню кофейни Coffee точка" class="clickable-menu-img" onclick="openZoomMenu()">
+            <p class="menu-hint">Нажмите на изображение меню, чтобы увеличить его на весь экран</p>
+        </div>
+    </section>
+
+    <!-- ПОЛНОЭКРАННОЕ ОКНО МАСШТАБИРОВАНИЯ (Откроется при клике) -->
+    <div id="zoomOverlay" class="zoom-overlay" onclick="closeZoomMenu()">
+        <span class="zoom-close" onclick="closeZoomMenu()">&times;</span>
+        <img src="menu.jpg" alt="Увеличенное меню Coffee точка">
+    </div>
 
     <!-- Контакты и график работы -->
     <section class="container info-panel">
@@ -122,8 +187,7 @@
         <p><strong>График работы:</strong></p>
         <p>• В будние дни (Пн-Пт): с 7:00 до 21:00</p>
         <p>• В выходные дни (Сб-Вс): с 8:00 до 21:00</p>
-        <!-- Встроена ваша точная правильная короткая ссылка -->
-        <a href="https://yandex.ru/maps/-/CPtxQJi0" target="_blank" class="yandex-btn">Открыть в Яндекс.Картах</a>
+        <a href="https://yandex.ru" target="_blank" class="yandex-btn">Открыть в Яндекс.Картах</a>
     </section>
 
     <!-- Карта -->
@@ -132,8 +196,20 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Кофейня Coffee точка. Все права защищены.</p>
+        <p>&copy; 2026 Кофейня Coffee точка. Все права закрыщены.</p>
     </footer>
+
+    <!-- Скрипт мгновенного плавного зума картинки -->
+    <script>
+        function openZoomMenu() {
+            document.getElementById('zoomOverlay').style.display = 'block';
+            document.body.classList.add('modal-open');
+        }
+        function closeZoomMenu() {
+            document.getElementById('zoomOverlay').style.display = 'none';
+            document.body.classList.remove('modal-open');
+        }
+    </script>
 
 </body>
 </html>
