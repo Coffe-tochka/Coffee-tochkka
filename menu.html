@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Полное Меню | Кофейня Coffee точка</title>
+    <!-- Подключаем премиальный шрифт Montserrat из Google Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        body {
+            background-color: #fcf9f5;
+            color: #332211;
+            padding-bottom: 60px;
+        }
+        .container {
+            width: 90%;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        header {
+            background-color: #ffffff;
+            padding: 25px 0;
+            border-bottom: 2px solid #6f4e37;
+            margin-bottom: 40px;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #6f4e37;
+            text-decoration: none;
+        }
+        .back-link {
+            color: #6f4e37;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        h1 {
+            color: #6f4e37;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+        .menu-category {
+            margin-bottom: 30px;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #eee0d5;
+        }
+        .category-title {
+            font-size: 1.4rem;
+            color: #553c29;
+            border-bottom: 2px solid #eee0d5;
+            padding-bottom: 6px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .menu-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        .item-dots {
+            flex-grow: 1;
+            border-bottom: 1px dotted #ccc;
+            margin: 0 10px;
+        }
+        .item-price {
+            font-weight: bold;
+            color: #6f4e37;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="Coffee-point.html" class="logo">Coffee точка</a>
+            <a href="Coffee-point.html" class="back-link">← На главную</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Полное Меню Кофейни</h1>
+
+        <!-- КАТЕГОРИЯ: КОФЕ КЛАССИКА -->
+        <div class="menu-category">
+            <div class="category-title">Эспрессо и Американо</div>
+            <div class="menu-line"><span>Эспрессо 30 мл</span><span class="item-dots"></span><span class="item-price">130 ₽</span></div>
+            <div class="menu-line"><span>Эспрессо двойной (допио) 60 мл</span><span class="item-dots"></span><span class="item-price">160 ₽</span></div>
+            <div class="menu-line"><span>Макиато 60 мл</span><span class="item-dots"></span><span class="item-price">160 ₽</span></div>
+            <div class="menu-line"><span>Американо 200 мл</span><span class="item-dots"></span><span class="item-price">180 ₽</span></div>
+            <div class="menu-line"><span>Американо 300 мл</span><span class="item-dots"></span><span class="item-price">230 ₽</span></div>
+            <div class="menu-line"><span>Американо 400 мл</span><span class="item-dots"></span><span class="item-price">250 ₽</span></div>
+            <div class="menu-line"><span>Фильтр кофе</span><span class="item-dots"></span><span class="item-price">230 ₽</span></div>
+        </div>
+
+        <!-- КАТЕГОРИЯ: КАПУЧИНО -->
+        <div class="menu-category">
+            <div class="category-title">Капучино</div>
+            <div class="menu-line"><span>Капучино 250 мл</span><span class="item-dots"></span><span class="item-price">210 ₽</span></div>
+            <div class="menu-line"><span>Капучино 350 мл</span><span class="item-dots"></span><span class="item-price">270 ₽</span></div>
+            <div class="menu-line"><span>Капучино 400 мл</span><span class="item-dots"></span><span class="item-price">290 ₽</span></div>
+        </div>
+
+        <!-- КАТЕГОРИЯ: ЛАТТЕ -->
+        <div class="menu-category">
+            <div class="category-title">Латте</div>
+            <div class="menu-line"><span>Латте 250 мл</span><span class="item-dots"></span><span class="item-price">210 ₽</span></div>
+            <div class="menu-line"><span>Латте 350 мл</span><span class="item-dots"></span><span class="item-price">270 ₽</span></div>
+            <div class="menu-line"><span>Латте 400 мл</span><span class="item-dots"></span><span class="item-price">290 ₽</span></div>
+            <div class="menu-line"><span>Латте 500 мл</span><span class="item-dots"></span><span class="item-price">300 ₽</span></div>
+        </div>
+
+        <!-- КАТЕГОРИЯ: РАФ И ФЛЭТ УАЙТ -->
+        <div class="menu-category">
+            <div class="category-title">РАФ и Флэт Уайт</div>
+            <div class="menu-line"><span>Флэт Уайт 250 мл</span><span class="item-dots"></span><span class="item-price">250 ₽</span></div>
+            <div class="menu-line"><span>Флэт Уайт 350 мл</span><span class="item-dots"></span><span class="item-price">300 ₽</span></div>
+            <div class="menu-line"><span>Флэт Уайт 400 мл</span><span class="item-dots"></span><span class="item-price">330 ₽</span></div>
+            <div class="menu-line"><span>РАФ 250 мл</span><span class="item-dots"></span><span class="item-price">260 ₽</span></div>
+            <div class="menu-line"><span>РАФ 350 мл</span><span class="item-dots"></span><span class="item-price">310 ₽</span></div>
+            <div class="menu-line"><span>РАФ 400 мл</span><span class="item-dots"></span><span class="item-price">350 ₽</span></div>
+        </div>
+
+        <!-- КАТЕГОРИЯ: МАТЧА И БАМБЛ -->
+        <div class="menu-category">
+            <div class="category-title">Матча, Бамбл и Особый кофе</div>
+            <div class="menu-line"><span>Латте Матча 250 мл</span><span class="item-dots"></span><span class="item-price">200 ₽</span></div>
+            <div class="menu-line"><span>Латте матча 350 мл</span><span class="item-dots"></span><span class="item-price">250 ₽</span></div>
+            <div class="menu-line"><span>Матча 400 мл</span><span class="item-dots"></span><span class="item-price">270 ₽</span></div>
+            <div class="menu-line"><span>Кофе-Глясе 250 мл</span><span class="item-dots"></span><span class="item-price">250 ₽</span></div>
+            <div class="menu-line"><span>Бамбл 350 мл</span><span class="item-dots"></span><span class="item-price">290 ₽</span></div>
+            <div class="menu-line"><span>Бамбл 400 мл</span><span class="item-dots"></span><span class="item-price">310 ₽</span></div>
+            <div class="menu-line"><span>Бамбл hot 350 мл</span><span class="item-dots"></span><span class="item-price">290 ₽</span></div>
+            <div class="menu-line"><span>Бамбл hot 400 мл</span><span class="item-dots"></span><span class="item-price">310 ₽</span></div>
+            <div class="menu-line"><span>Аффогато</span><span class="item-dots"></span><span class="item-price">250 ₽</span></div>
+        </div>
+
+        <!-- КАТЕГОРИЯ: ВЫПЕЧКА -->
+        <div class="menu-category">
+            <div class="category-title">Свежая выпечка</div>
+            <div class="menu-line"><span>Круассан классик</span><span class="item-dots"></span><span class="item-price">120 ₽</span></div>
+            <div class="menu-line"><span>Круассан с сыром</span><span class="item-dots"></span><span class="item-price">170 ₽</span></div>
+            <div class="menu-line"><span>Слойка кленовый пекан</span><span class="item-dots"></span><span class="item-price">180 ₽</span></div>
+            <div class="menu-line"><span>Круассан с малиной</span><span class="item-dots"></span><span class="item-price">190 ₽</span></div>
+            <div class="menu-line"><span>Круассан с заварным кремом и лимоном</span><span class="item-dots"></span><span class="item-price">190 ₽</span></div>
+            <div class="menu-line"><span>Круассан с молодым сыром</span><span class="item-dots"></span><span class="item-price">200 ₽</span></div>
+            <div class="menu-line"><span>Круассан с шоколадом и орехами</span><span class="item-dots"></span><span class="item-price">200 ₽</span></div>
+        </div>
+
+        <!-- КАТЕГОРИЯ: КЛАССИЧЕСКИЕ ТОРТЫ И ДЕСЕРТЫ -->
+        <div class="menu-category">
+            <div class="category-title">Торты и Десерты</div>
+            <div class="menu-line"><span>Десерт Мандарин</span><span class="item-dots"></span><span class="item-price">300 ₽</span></div>
+            <div class="menu-line"><span>Тирамису</span><span class="item-dots"></span><span class="item-price">300 ₽</span></div>
+            <div class="menu-line"><span>Зерно</span><span class="item-dots"></span><span class="item-price">300 ₽</span></div>
+            <div class="menu-line"><span>Кокос</span><span class="item-dots"></span><span class="item-price">270 ₽</span></div>
+            <div class="menu-line"><span>Манго</span><span class="item-dots"></span><span class="item-price">300 ₽</span></div>
+            <div class="menu-line"><span>Фисташка</span><span class="item-dots"></span><span class="item-price">300 ₽</span></div>
+            <div class="menu-line"><span>Наполеон</span><span class="item-dots"></span><span class="item-price">300 ₽</span></div>
