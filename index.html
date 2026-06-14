@@ -9,55 +9,6 @@
     <link href="https://googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <!-- Подключаем ваш файл дизайна -->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Дополнительные стили для красивого всплывающего меню -->
-    <style>
-        /* Стиль для всплывающего окна (скрыто по умолчанию) */
-        .modal-menu {
-            display: none; 
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9); /* Темный премиальный фон */
-            overflow-y: auto;
-            padding: 40px 10px;
-        }
-        /* Кнопка Закрыть (крестик) */
-        .close-modal {
-            position: fixed;
-            top: 15px;
-            right: 25px;
-            color: #ffffff;
-            font-size: 35px;
-            font-weight: bold;
-            cursor: pointer;
-            z-index: 1001;
-            background: rgba(111, 78, 55, 0.8);
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-        }
-        /* Сама картинка меню внутри окна */
-        .modal-content-img {
-            display: block;
-            margin: 0 auto;
-            width: 100%;
-            max-width: 650px; /* Идеальная ширина для чтения на телефонах */
-            height: auto;
-            border-radius: 4px;
-            box-shadow: 0 4px 25px rgba(0,0,0,0.5);
-        }
-        /* Блокируем прокрутку сайта при открытом меню */
-        .no-scroll {
-            overflow: hidden;
-        }
-    </style>
 </head>
 <body>
 
@@ -104,43 +55,42 @@
     <section class="container">
         <h2 class="section-title">Популярные позиции</h2>
         <div class="menu-grid">
+            
             <div class="menu-item">
                 <img src="https://unsplash.com" alt="Капучино">
                 <h3>Капучино</h3>
                 <p>Классический кофе с нежной молочной пенкой.</p>
                 <div class="price">350 мл / 270 ₽</div>
             </div>
+
             <div class="menu-item">
                 <img src="https://unsplash.com" alt="Латте">
                 <h3>Латте</h3>
                 <p>Мягкий кофейно-молочный напиток.</p>
                 <div class="price">350 мл / 270 ₽</div>
             </div>
+
             <div class="menu-item">
                 <img src="https://unsplash.com" alt="РАФ">
                 <h3>РАФ</h3>
                 <p>Густой, нежный сливочный вкус с ванилью.</p>
                 <div class="price">350 мл / 310 ₽</div>
             </div>
+
             <div class="menu-item">
                 <img src="https://unsplash.com" alt="Флэт-уайт">
                 <h3>Флэт-уайт</h3>
                 <p>Яркий вкус двойного эспрессо в молоке.</p>
                 <div class="price">250 мл / 250 ₽</div>
             </div>
+
         </div>
 
         <div class="menu-link-box">
-            <!-- Кнопка, которая теперь плавно открывает галерею на этой же странице -->
-            <a href="#" id="openMenuBtn" onclick="toggleMenuModal(event, true)">Смотреть всё меню</a>
+            <!-- Прямая, защищенная ссылка на картинку меню, которая откроется на любом телефоне -->
+            <a href="menu-photo.jpg" target="_blank">Смотреть всё меню</a>
         </div>
     </section>
-
-    <!-- КРАСИВОЕ ВСПЛЫВАЮЩЕЕ ОКНО С КАРТИНКОЙ МЕНЮ -->
-    <div id="menuModal" class="modal-menu" onclick="toggleMenuModal(event, false)">
-        <span class="close-modal" onclick="toggleMenuModal(event, false)">&times;</span>
-        <img class="modal-content-img" src="menu-photo.jpg" alt="Полное меню Coffee точка" onclick="event.stopPropagation()">
-    </div>
 
     <!-- Контакты и график работы -->
     <section class="container info-panel">
@@ -158,24 +108,10 @@
         <iframe src="https://yandex.ru" allowfullscreen="true"></iframe>
     </section>
 
+    <!-- Подвал -->
     <footer>
         <p>&copy; 2026 Кофейня Coffee точка. Все права защищены.</p>
     </footer>
-
-    <!-- Маленький умный скрипт для управления окном -->
-    <script>
-        function toggleMenuModal(event, show) {
-            if (event) event.preventDefault();
-            const modal = document.getElementById('menuModal');
-            if (show) {
-                modal.style.display = 'block';
-                document.body.classList.add('no-scroll');
-            } else {
-                modal.style.display = 'none';
-                document.body.classList.remove('no-scroll');
-            }
-        }
-    </script>
 
 </body>
 </html>
